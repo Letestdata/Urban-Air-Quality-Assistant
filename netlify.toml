@@ -1,8 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
 
-# Environment variables defaults
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [build.environment]
   NEXT_PUBLIC_APP_NAME = "Urban Air AI"
   NEXT_PUBLIC_APP_TAGLINE = "Breathe Smarter. Live Healthier."
