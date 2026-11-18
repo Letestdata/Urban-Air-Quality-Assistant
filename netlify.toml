@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Environment variables defaults
+[build.environment]
+  NEXT_PUBLIC_APP_NAME = "Urban Air AI"
+  NEXT_PUBLIC_APP_TAGLINE = "Breathe Smarter. Live Healthier."
+  NODE_VERSION = "20"
