@@ -50,7 +50,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#F3F6F1] text-[#202B27] flex flex-col">
       {/* Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-[#102D26] text-white border-b border-[#174638] px-6 py-4">
+      <header role="banner" className="sticky top-0 z-50 bg-[#102D26] text-white border-b border-[#174638] px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1F8A63] to-[#80C9A4] flex items-center justify-center text-[#102D26] font-bold shadow-md">
@@ -64,7 +64,7 @@ export default function LandingPage() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-200">
+          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-200">
             <a href="#how-it-works" className="hover:text-[#80C9A4] transition">How It Works</a>
             <a href="#features" className="hover:text-[#80C9A4] transition">Features</a>
             <a href="#preview" className="hover:text-[#80C9A4] transition">Daily Planner</a>
@@ -88,6 +88,9 @@ export default function LandingPage() {
           </div>
         </div>
       </header>
+
+      {/* Main Content Area Landmark */}
+      <main id="main-content" role="main" className="flex-1">
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#102D26] via-[#174638] to-[#102D26] text-white py-20 px-6">
@@ -333,9 +336,10 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-[#0b201b] text-gray-400 text-xs py-8 px-6 border-t border-[#174638]">
+      <footer role="contentinfo" className="bg-[#0b201b] text-gray-400 text-xs py-8 px-6 border-t border-[#174638]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© 2026 Urban Air AI. Breathe Smarter. Live Healthier. India First.</p>
           <p className="text-center sm:text-right">

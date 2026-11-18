@@ -24,6 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="h-full bg-[#F3F6F1] text-[#202B27] antialiased selection:bg-[#80C9A4] selection:text-[#102D26]">
+        {/* WCAG 2.2 AA Skip to Main Content Landmark Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#102D26] focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#80C9A4] text-sm font-bold"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

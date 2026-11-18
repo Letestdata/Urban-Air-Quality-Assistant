@@ -46,7 +46,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F6F1] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <main id="main-content" role="main" className="min-h-screen bg-[#F3F6F1] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link href="/" className="inline-flex items-center gap-3">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1F8A63] to-[#80C9A4] flex items-center justify-center text-[#102D26] font-bold shadow-md">
@@ -54,7 +54,7 @@ export default function RegisterPage() {
           </div>
           <span className="text-2xl font-black text-[#102D26] tracking-tight">Urban Air AI</span>
         </Link>
-        <h2 className="mt-4 text-2xl font-extrabold text-[#202B27]">Create your account</h2>
+        <h1 className="mt-4 text-2xl font-extrabold text-[#202B27]">Create your account</h1>
         <p className="mt-1 text-xs text-gray-500">Breathe smarter with personalized daily planning</p>
       </div>
 
@@ -69,10 +69,11 @@ export default function RegisterPage() {
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
             <div>
-              <label className="block text-xs font-bold text-[#202B27] mb-1">Full Name</label>
+              <label htmlFor="fullName" className="block text-xs font-bold text-[#202B27] mb-1">Full Name</label>
               <div className="relative">
                 <User className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                 <input
+                  id="fullName"
                   type="text"
                   required
                   value={fullName}
@@ -84,10 +85,11 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#202B27] mb-1">Email Address</label>
+              <label htmlFor="registerEmail" className="block text-xs font-bold text-[#202B27] mb-1">Email Address</label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                 <input
+                  id="registerEmail"
                   type="email"
                   required
                   value={email}
@@ -100,10 +102,11 @@ export default function RegisterPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-bold text-[#202B27] mb-1">Password</label>
+                <label htmlFor="registerPassword" className="block text-xs font-bold text-[#202B27] mb-1">Password</label>
                 <div className="relative">
                   <Lock className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                   <input
+                    id="registerPassword"
                     type="password"
                     required
                     minLength={8}
@@ -116,10 +119,11 @@ export default function RegisterPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#202B27] mb-1">Confirm</label>
+                <label htmlFor="confirmPassword" className="block text-xs font-bold text-[#202B27] mb-1">Confirm</label>
                 <div className="relative">
                   <Lock className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                   <input
+                    id="confirmPassword"
                     type="password"
                     required
                     minLength={8}
@@ -133,10 +137,11 @@ export default function RegisterPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#202B27] mb-1">Preferred Language</label>
+              <label htmlFor="language" className="block text-xs font-bold text-[#202B27] mb-1">Preferred Language</label>
               <div className="relative">
                 <Globe className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                 <select
+                  id="language"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
                   className="w-full pl-9 pr-3.5 py-2 text-sm rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1F8A63] bg-white text-gray-700"
@@ -166,6 +171,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

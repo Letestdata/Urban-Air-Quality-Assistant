@@ -31,7 +31,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F6F1] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <main id="main-content" role="main" className="min-h-screen bg-[#F3F6F1] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link href="/" className="inline-flex items-center gap-3">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1F8A63] to-[#80C9A4] flex items-center justify-center text-[#102D26] font-bold shadow-md">
@@ -39,7 +39,7 @@ export default function LoginPage() {
           </div>
           <span className="text-2xl font-black text-[#102D26] tracking-tight">Urban Air AI</span>
         </Link>
-        <h2 className="mt-4 text-2xl font-extrabold text-[#202B27]">Sign in to your account</h2>
+        <h1 className="mt-4 text-2xl font-extrabold text-[#202B27]">Sign in to your account</h1>
         <p className="mt-1 text-xs text-gray-500">Access your personalized environmental intelligence dashboard</p>
       </div>
 
@@ -54,10 +54,11 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#202B27] mb-1">Email Address</label>
+              <label htmlFor="email" className="block text-xs font-bold text-[#202B27] mb-1">Email Address</label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                 <input
+                  id="email"
                   type="email"
                   required
                   value={email}
@@ -70,7 +71,7 @@ export default function LoginPage() {
 
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label className="block text-xs font-bold text-[#202B27]">Password</label>
+                <label htmlFor="password" className="block text-xs font-bold text-[#202B27]">Password</label>
                 <Link href="/forgot-password" className="text-xs text-[#1F8A63] hover:underline font-semibold">
                   Forgot password?
                 </Link>
@@ -78,6 +79,7 @@ export default function LoginPage() {
               <div className="relative">
                 <Lock className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
                 <input
+                  id="password"
                   type="password"
                   required
                   value={password}
@@ -106,6 +108,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

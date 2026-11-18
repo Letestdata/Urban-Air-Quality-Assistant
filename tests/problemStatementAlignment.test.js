@@ -1,6 +1,6 @@
 /**
  * Problem Statement Alignment & PRD Verification Suite for Urban Air AI.
- * Verifies that all 14 PRD modules and core problem statement solutions are implemented.
+ * Verifies that all 5 Problem Pillars and 14 PRD modules are implemented.
  */
 
 const fs = require('fs');
@@ -51,7 +51,25 @@ function testProblemStatementAlignment() {
     "Indoor engine must calculate CADR requirements and ventilation windows"
   );
 
-  // 4. Verify All 14 PRD Main Modules are Present
+  // 4. Problem 4: Absence of Individualized Family Risk Modeling
+  // Solution: Family profiles service with sensitivity tags
+  const familyServicePath = path.join(__dirname, '..', 'backend', 'app', 'services', 'family_service.py');
+  assert(
+    "Problem 4: Multi-Profile Family Risk Modeling Implemented",
+    fs.existsSync(familyServicePath) && fs.readFileSync(familyServicePath, 'utf8').includes('FamilyService'),
+    "Family service must manage member sensitivities"
+  );
+
+  // 5. Problem 5: Missing Climate Agency & Impact Quantification
+  // Solution: My Carbon Impact calculator with kg CO2e avoided
+  const impactServicePath = path.join(__dirname, '..', 'backend', 'app', 'services', 'impact_service.py');
+  assert(
+    "Problem 5: Personal Carbon Impact & Equivalence Modeled",
+    fs.existsSync(impactServicePath) && fs.readFileSync(impactServicePath, 'utf8').includes('EMISSION_FACTORS'),
+    "Impact service must calculate avoided transit emissions"
+  );
+
+  // 6. Verify All 14 PRD Main Modules are Present
   const requiredModules = [
     { name: "Overview Dashboard", file: "app/(dashboard)/dashboard/page.tsx" },
     { name: "Air Quality Telemetry", file: "app/(dashboard)/air-quality/page.tsx" },
@@ -74,7 +92,7 @@ function testProblemStatementAlignment() {
     assert(`Module Implemented: ${mod.name}`, fs.existsSync(fullPath), `Missing file: ${mod.file}`);
   });
 
-  // 5. Zero-Medical-Hallucination Guardrail Check
+  // 7. Zero-Medical-Hallucination Guardrail Check
   const assistantServicePath = path.join(__dirname, '..', 'backend', 'app', 'services', 'assistant_service.py');
   assert(
     "AI Safety Guardrail: Medical Disclaimers Enforced",
