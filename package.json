@@ -8,7 +8,7 @@
     "start": "next start -p 3000",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test": "node test-accessibility.js && node test-components.js"
+    "test": "node tests/problemStatementAlignment.test.js && node tests/accessibility.test.js && node tests/security.test.js && node tests/cpcbCalculator.test.js && node tests/components.test.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",

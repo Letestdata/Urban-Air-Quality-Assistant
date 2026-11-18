@@ -8,7 +8,11 @@ from argon2.exceptions import VerifyMismatchError
 from app.core.config import get_settings
 
 settings = get_settings()
-ph = PasswordHasher()
+ph = PasswordHasher(
+    time_cost=settings.ARGON2_TIME_COST if hasattr(settings, "ARGON2_TIME_COST") else 2,
+    memory_cost=settings.ARGON2_MEMORY_COST if hasattr(settings, "ARGON2_MEMORY_COST") else 65536,
+    parallelism=1
+)
 
 
 def hash_password(password: str) -> str:

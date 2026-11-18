@@ -28,7 +28,11 @@ export function FreshnessIndicator({ status, timestamp }: FreshnessIndicatorProp
   }
 
   return (
-    <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${badgeColor}`}>
+    <div
+      role="status"
+      aria-live="polite"
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${badgeColor}`}
+    >
       <Icon className="w-3.5 h-3.5" aria-hidden="true" />
       <span>{text}</span>
       {timestamp && (
