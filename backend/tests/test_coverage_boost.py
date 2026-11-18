@@ -2,11 +2,11 @@
 
 from app.rules.cpcb_calculator import (
     calculate_overall_cpcb_aqi,
-    get_aqi_category_and_color,
     calculate_sub_index,
+    get_aqi_category_and_color,
 )
-from app.rules.safety_engine import EnvironmentalSafetyEngine
 from app.rules.indoor_engine import IndoorRulesEngine
+from app.rules.safety_engine import EnvironmentalSafetyEngine
 
 
 def test_locations_api_endpoints(client):
